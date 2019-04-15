@@ -1,18 +1,19 @@
 class Solution {
 public:
     int searchInsert(vector<int>& nums, int target) {
-        bool greater = false;
-        int i = 0;
-        while(1){
-            if(nums[i] == target){
-                return i;
-            }else if(!greater && target < nums[i]){
-                return i;
-            }else if(i == nums.size() -1){
-                return i + 1;
+        vector<int>::iterator itr = nums.begin();
+        itr = find(nums.begin(), nums.end(), target);
+        if(itr != nums.end()){
+            return distance(nums.begin(), itr);
+        }else{
+            for(int i = 0; i < nums.size(); i++){
+                if(target < nums[i]){
+                    return i;
+                }else if(i == nums.size() - 1){
+                    return i + 1;
+                }
             }
-            i++;
+            return nums.size();
         }
-        return 0;
     }
 };
