@@ -25,18 +25,18 @@ public:
                 }
             }
                 xMax.push_back(topX);
-                cout << "Pushed back X " << topX << endl;
+                //cout << "Pushed back X " << topX << endl;
                 yMax.push_back(topY);
-                cout << "Pushed back Y " << topY << endl;
+                //cout << "Pushed back Y " << topY << endl;
         }
         for(int i = 0; i < grid.size(); i++){
             for(int j = 0; j < grid[i].size(); j++){
-                if(xMax[i] > yMax[j]){
+                if(xMax[i] < yMax[j]){
                     total += xMax[i] - grid[i][j];
-                    cout << "Added " << xMax[i] - grid[i][j] << " to total" << endl;
+                    //cout << "Added " << xMax[i] - grid[i][j] << " to total" << endl;
                 }else{
                     total += yMax[j] - grid[i][j];
-                    cout << "Added " << yMax[j] - grid[i][j] << " to total" << endl;
+                    //cout << "Added " << yMax[j] - grid[i][j] << " to total" << endl;
                 }
             }
         }
