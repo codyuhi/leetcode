@@ -11,7 +11,7 @@ public:
             while(poppedValue < popped.size() && myStack.top() == popped[poppedValue]){
                 myStack.pop();
                 poppedValue++;
-                if(myStack.size() == 0){
+                if(myStack.empty()){
                     break;
                 }
             }
